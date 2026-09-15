@@ -774,7 +774,7 @@ nav {
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translateY(-50%);
+    transform: translateY(calc(-50% + 2rem));
     width: unset;
     height: 100%;
   }
@@ -963,6 +963,12 @@ nav {
   line-height: 1.5rem;
 }
 
+@media (width >= 1200px) {
+  .team__grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
 /* ============== PROJECT ABOUT SECTION ============== */
 .project {
   background-color: var(--white);
@@ -978,8 +984,10 @@ nav {
 .project__grid {
   display: grid;
   gap: 3rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   align-items: flex-start;
+  max-width: 600px;
+  margin-inline: auto;
 }
 
 /* Responsive */
